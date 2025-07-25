@@ -4,12 +4,19 @@ A simple Maven project designed to test dependency analysis capabilities.
 
 ## Dependencies
 
-This project uses only a few key dependencies to demonstrate dependency analysis:
+This project uses several dependencies to demonstrate dependency analysis:
 
-- **Jackson Databind** (`com.fasterxml.jackson.core:jackson-databind:2.15.2`) - JSON processing
+- **Jackson Databind** (`com.fasterxml.jackson.core:jackson-databind:${jackson.version}`) - JSON processing
+- **Apache Commons Lang** (`org.apache.commons:commons-lang3:${commons-lang.version}`) - String utilities
 - **SLF4J API** (`org.slf4j:slf4j-api:2.0.7`) - Logging interface  
 - **Logback Classic** (`ch.qos.logback:logback-classic:1.4.11`) - Logging implementation
 - **JUnit Jupiter** (`org.junit.jupiter:junit-jupiter:5.10.0`) - Testing framework (test scope)
+
+### Version Properties
+
+The project uses Maven properties for version management:
+- `${jackson.version}` = 2.15.2
+- `${commons-lang.version}` = 3.12.0
 
 ## Build Plugins
 
@@ -19,6 +26,7 @@ This project uses only a few key dependencies to demonstrate dependency analysis
 ## Features
 
 - **DataProcessor** class that demonstrates JSON processing and logging
+- **StringUtils** class that provides enhanced string utilities using Apache Commons Lang
 - Comprehensive unit tests using JUnit 5
 - Uses property variables for version management
 - Clean Maven project structure
@@ -32,7 +40,11 @@ mvn clean compile test package
 ## Running
 
 ```bash
+# Run DataProcessor
 java -cp target/classes com.example.DataProcessor
+
+# Run StringUtils demonstration
+java -cp target/classes com.example.StringUtils
 ```
 
 ## Testing
@@ -55,6 +67,7 @@ Your dependency analyzer should find:
 
 ### Direct Dependencies
 - `com.fasterxml.jackson.core:jackson-databind:2.15.2`
+- `org.apache.commons:commons-lang3:3.12.0`
 - `org.slf4j:slf4j-api:2.0.7` 
 - `ch.qos.logback:logback-classic:1.4.11`
 - `org.junit.jupiter:junit-jupiter:5.10.0` (test scope)
